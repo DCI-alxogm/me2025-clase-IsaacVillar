@@ -1,3 +1,1 @@
-Métodos numéricos - David Oliva
-
-Primera clase siiiii
+Métodos numéricos - David Isaac Oliva Villar
