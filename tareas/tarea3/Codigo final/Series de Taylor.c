@@ -8,8 +8,6 @@
 //Para no confundir antes de empezar:
 //x = es xi+1 en la serie de Taylor, esto porque el valor x es al que se busca aproximar, pero no me dejaba declarar así a la variable  
 //xi = es tal cual xi en la serie de Taylor, con esta no hubo problemas para declararla
-
-//Otro detalle, probandolo, no puse pi como tal para los cosenos y senos, que por cierto, funcionan en radianes
 int main() {
     int opcion, max_iter, n, n_cumple = -1;
     double x, xi, Es;
@@ -23,41 +21,35 @@ int main() {
         printf("Entrada invalida.\n"); return 1; 
     }
 
-    printf("Ingresa x: "); 
+    printf("Ingresa x (xi+1): "); 
     if (scanf("%lf", &x) != 1) 
     { 
-        printf("Entrada invalida.\n");
-        return 1; 
+        printf("Entrada invalida.\n"); 
     }
     printf("Ingresa xi (punto de expansion): "); 
     if (scanf("%lf", &xi) != 1) 
     { 
-        printf("Entrada invalida.\n"); 
-        return 1; 
+        printf("Entrada invalida.\n");  
     }
     printf("Ingresa Es (%%): "); 
     if (scanf("%lf", &Es) != 1 || Es <= 0.0) 
     {
         printf("Es invalido.\n"); 
-        return 1; 
     }
     printf("Maximo de iteraciones: "); 
     if (scanf("%d", &max_iter) != 1 || max_iter < 1) 
     { 
         printf("Iteraciones invalidas.\n"); 
-        return 1; 
     }
 
     // Revisiones de dominio
     if (opcion == 4 && (xi <= 0.0 || x <= 0.0)) 
     { 
         printf("Para ln(x) se requiere xi>0 y x>0.\n"); 
-        return 1; 
     }
     if (opcion == 5 && (x == 1.0 || xi == 1.0)) 
     { 
         printf("1/(1-x) es singular en x=1. Evita xi=1 y x=1.\n"); 
-        return 1; 
     }
 
     h = x - xi;
