@@ -5,7 +5,12 @@
 #include <stdio.h>
 #include <math.h>
 
-int main(void) {
+//Para no confundir antes de empezar:
+//x = es xi+1 en la serie de Taylor, esto porque el valor x es al que se busca aproximar, pero no me dejaba declarar así a la variable  
+//xi = es tal cual xi en la serie de Taylor, con esta no hubo problemas para declararla
+
+//Otro detalle, probandolo, no puse pi como tal para los cosenos y senos, que por cierto, funcionan en radianes
+int main() {
     int opcion, max_iter, n, n_cumple = -1;
     double x, xi, Es;
     double S = 0.0, S_prev = 0.0, term = 0.0, Ea = 100.0, Er = 0.0;
