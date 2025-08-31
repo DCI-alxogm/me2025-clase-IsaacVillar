@@ -76,12 +76,12 @@ int main() {
     } 
     else if (opcion == 2) 
     {
-        factor = 1.0; deriv = sin(xi); 
+        factor = 1; deriv = sin(xi); 
         term = deriv * factor; S = term;
     } 
     else if (opcion == 3) 
     {
-        factor = 1.0; deriv = cos(xi); 
+        factor = 1; deriv = cos(xi); 
         term = deriv * factor; S = term;
     } 
     else if (opcion == 4) 
@@ -90,7 +90,7 @@ int main() {
     } 
     else if (opcion == 5) 
     {
-        denom = 1.0 - xi; S = 1.0/denom;
+        denom = 1 - xi; S = 1.0/denom;
     }
     Er = fabs((realv - S) / realv) * 100.0;
     printf("%-6d %-22.12f %-12s %-12.8f\n", 0, S, "N/A", Er);
