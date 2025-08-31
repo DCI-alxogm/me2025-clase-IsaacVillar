@@ -9,10 +9,10 @@
 //x = es xi+1 en la serie de Taylor, esto porque el valor x es al que se busca aproximar, pero no me dejaba declarar así a la variable  
 //xi = es tal cual xi en la serie de Taylor, con esta no hubo problemas para declararla
 int main() {
-    int opcion, max_iter, n, n_cumple = -1;
+    int opcion, max_iter, n, n_cumple;
     double x, xi, Es;
-    double S = 0, S_prev = 0, term = 0, Ea = 100, Er = 0;
-    double h, denom, sign, deriv, factor, realv = 0.0;
+    double S, S_prev, term, Ea, Er;
+    double h, denom, sign, deriv, factor, realv;
 
     printf("Elige funcion (Taylor alrededor de xi):\n");
     printf("1) e^x\n2) sin(x)\n3) cos(x)\n4) ln(x)\n5) 1/(1-x)\nOpcion: ");
@@ -43,13 +43,13 @@ int main() {
     }
 
     // Revisiones de dominio
-    if (opcion == 4 && (xi <= 0.0 || x <= 0.0)) 
+    if (opcion == 4 && (xi <= 0 || x <= 0)) 
     { 
         printf("Para ln(x) se requiere xi>0 y x>0.\n"); 
     }
-    if (opcion == 5 && (x == 1.0 || xi == 1.0)) 
+    if (opcion == 5 && (x == 1 || xi == 1)) 
     { 
-        printf("1/(1-x) es singular en x=1. Evita xi=1 y x=1.\n"); 
+        printf("1/(1-x) es singular en x=1. Evita xi=1 y x=1\n"); 
     }
 
     h = x - xi;
@@ -97,7 +97,7 @@ int main() {
         denom = 1 - xi; S = 1/denom;
     }
 
-    Er = fabs((realv - S) / realv) * 100.0;
+    Er = fabs((realv - S) / realv) * 100;
     
     //Primera línea donde n=0
     printf("%-6d %-22.12f %-12s %-12.8f\n", 0, S, "N/A", Er);
