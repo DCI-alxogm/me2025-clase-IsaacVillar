@@ -11,14 +11,14 @@
 int main() {
     int opcion, max_iter, n, n_cumple = -1;
     double x, xi, Es;
-    double S = 0.0, S_prev = 0.0, term = 0.0, Ea = 100.0, Er = 0.0;
+    double S = 0, S_prev = 0, term = 0, Ea = 100, Er = 0;
     double h, denom, sign, deriv, factor, realv = 0.0;
 
     printf("Elige funcion (Taylor alrededor de xi):\n");
     printf("1) e^x\n2) sin(x)\n3) cos(x)\n4) ln(x)\n5) 1/(1-x)\nOpcion: ");
     if (scanf("%d", &opcion) != 1 || opcion < 1 || opcion > 5) 
     { 
-        printf("Entrada invalida.\n"); return 1; 
+        printf("Entrada invalida.\n"); 
     }
 
     printf("Ingresa x (xi+1): "); 
@@ -67,9 +67,13 @@ int main() {
     else if (opcion == 4) 
     realv = log(x);
     else if (opcion == 5) 
-    realv = 1.0/(1.0-x);
+    realv = 1/(1-x);
 
     // n = 0
+    //term = epresenta el término individual que se está agregando en cada iteración
+    //S = representa la suma acumulada de la serie hasta el término actual
+    //factor = representa el término factorial y de potencia, funciona diferente al usado en un código pasado
+    
     if (opcion == 1) 
     {
         S = exp(xi); term = S;
@@ -90,9 +94,12 @@ int main() {
     } 
     else if (opcion == 5) 
     {
-        denom = 1 - xi; S = 1.0/denom;
+        denom = 1 - xi; S = 1/denom;
     }
+
     Er = fabs((realv - S) / realv) * 100.0;
+    
+    //Primera línea donde n=0
     printf("%-6d %-22.12f %-12s %-12.8f\n", 0, S, "N/A", Er);
 
     // Iteraciones
@@ -123,18 +130,18 @@ int main() {
         } 
         else if (opcion == 4) //logaritmo natural
         {
-            sign = (n % 2) ? 1.0 : -1.0;
+            sign = (n % 2) ? 1 : -1;
             term = sign * pow(h, n) / ( (double)n * pow(xi, n) );
             S_prev = S; S += term;
         } 
         else if (opcion == 5) //1/1-x
         {
-            term = pow(h, n) / pow(1.0 - xi, n + 1);
+            term = pow(h, n) / pow(1 - xi, n + 1);
             S_prev = S; S += term;
         }
 
-        Ea = fabs((S - S_prev) / S) * 100.0;
-        Er = fabs((realv - S) / realv) * 100.0;
+        Ea = fabs((S - S_prev) / S) * 100;
+        Er = fabs((realv - S) / realv) * 100;
         printf("%-6d %-22.12f %-12.8f %-12.8f\n", n, S, Ea, Er);
 
         //Aquí termina el ciclo, pero agregamos lo de abajo para que también indique en que término de la serie se llega al Error ingresado
