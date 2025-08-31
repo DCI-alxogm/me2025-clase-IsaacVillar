@@ -1,5 +1,5 @@
 David Isaac Oliva Villar
-Métodos numéricos\n
+Métodos numéricos
 Programa Serie de Taylor
 INICIO 
 
