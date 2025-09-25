@@ -5,3 +5,4 @@ Esta es la zona de las tareas
 - Tarea 4: Código de derivadas numéricas
 - Tarea 5: Segunda y tercera diferencia finita
 - Tarea 6: Bisección en función Sen(10x)-cos(3x)
+- Tarea 7: Comparativa de métodos numéricos en diferentes funciones
