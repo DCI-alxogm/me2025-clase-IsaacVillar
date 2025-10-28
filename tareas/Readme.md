@@ -7,3 +7,7 @@ Esta es la zona de las tareas
 - Tarea 6: Bisección en función Sen(10x)-cos(3x)
 - Tarea 7: Comparativa de métodos numéricos en diferentes funciones
 - Tarea 8: Práctica para el examen
+- Tarea 9: Método de Gauus
+- Tarea 10: Gauss-Jordan
+- Tarea 11: Factorización "LU"
+- Tarea 12: Gauss-Seidel
