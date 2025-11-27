@@ -11,3 +11,5 @@ Esta es la zona de las tareas
 - Tarea 10: Gauss-Jordan
 - Tarea 11: Factorización "LU"
 - Tarea 12: Gauss-Seidel
+- Tarea 13 Método del gradiente
+- Tarea 14: Soluciones EDO
